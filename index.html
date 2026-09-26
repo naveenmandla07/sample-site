@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Studio Verandah — Office Interior Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal:#1F1D1B;
+    --limestone:#EDE7DD;
+    --clay:#B5763F;
+    --graphite:#565049;
+    --paper:#FAF8F4;
+    --line: rgba(31,29,27,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth; scroll-padding-top: env(safe-area-inset-top,0px);}
+  body{
+    background:var(--paper);
+    color:var(--charcoal);
+    font-family:'Inter', system-ui, sans-serif;
+    line-height:1.55;
+    padding-top: env(safe-area-inset-top,0px);
+    padding-bottom: env(safe-area-inset-bottom,0px);
+  }
+  h1,h2,h3{font-family:'Fraunces', Georgia, serif; font-weight:500; letter-spacing:-0.01em;}
+  a{color:inherit;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 28px;}
+
+  header{
+    position:sticky; top:0; z-index:10;
+    background:rgba(250,248,244,0.9); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+    padding-top: env(safe-area-inset-top,0px);
+  }
+  nav{display:flex; align-items:center; justify-content:space-between; padding:18px 28px; max-width:1120px; margin:0 auto;}
+  .brand{font-family:'Fraunces', serif; font-size:1.15rem; font-weight:600;}
+  .navlinks{display:flex; gap:28px; font-size:0.92rem;}
+  .navlinks a{text-decoration:none; opacity:0.75;}
+  .navlinks a:hover{opacity:1;}
+
+  .hero{
+    padding:100px 28px 90px;
+    max-width:1120px; margin:0 auto;
+    display:grid; grid-template-columns:1.3fr 1fr; gap:60px; align-items:end;
+  }
+  .hero h1{font-size:clamp(2.3rem,5vw,3.6rem); line-height:1.08; max-width:14ch;}
+  .hero p{margin-top:22px; max-width:38ch; color:var(--graphite); font-size:1.05rem;}
+  .hero .meta{border-left:2px solid var(--clay); padding-left:18px; color:var(--graphite); font-size:0.95rem;}
+  .hero .meta div{margin-bottom:10px;}
+  .cta{
+    display:inline-block; margin-top:28px; padding:13px 26px;
+    background:var(--charcoal); color:var(--paper); text-decoration:none;
+    font-size:0.92rem; letter-spacing:0.01em;
+  }
+  .cta:hover{background:var(--clay);}
+
+  section{padding:70px 28px;}
+  section h2{font-size:1.8rem; margin-bottom:36px;}
+
+  .services{background:var(--limestone); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .service-list{max-width:1120px; margin:0 auto;}
+  .service-row{
+    display:grid; grid-template-columns:80px 1fr 2fr; gap:24px;
+    padding:26px 0; border-top:1px solid var(--line);
+    align-items:baseline;
+  }
+  .service-row:last-child{border-bottom:1px solid var(--line);}
+  .service-row .num{font-family:'Fraunces', serif; color:var(--clay); font-size:1rem;}
+  .service-row h3{font-size:1.15rem; font-weight:500;}
+  .service-row p{color:var(--graphite); font-size:0.96rem; max-width:52ch;}
+
+  .work{max-width:1120px; margin:0 auto;}
+  .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:4px;}
+  .tile{
+    aspect-ratio:4/3; background:var(--limestone);
+    display:flex; align-items:flex-end; padding:16px;
+    position:relative; overflow:hidden;
+  }
+  .tile::before{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(160deg, var(--charcoal) 0%, var(--graphite) 55%, var(--clay) 130%);
+    opacity:0.9;
+  }
+  .tile span{position:relative; color:var(--paper); font-size:0.88rem; z-index:1;}
+  .tile:nth-child(2)::before{background:linear-gradient(200deg, var(--graphite), var(--charcoal) 70%);}
+  .tile:nth-child(3)::before{background:linear-gradient(140deg, var(--clay), var(--charcoal) 120%);}
+  .tile:nth-child(4)::before{background:linear-gradient(180deg, var(--charcoal), var(--graphite));}
+  .tile:nth-child(5)::before{background:linear-gradient(120deg, var(--graphite), var(--clay) 140%);}
+  .tile:nth-child(6)::before{background:linear-gradient(200deg, var(--charcoal), var(--clay) 160%);}
+
+  .about{background:var(--charcoal); color:var(--paper);}
+  .about .wrap{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;}
+  .about h2{color:var(--paper);}
+  .about p{color:rgba(250,248,244,0.75); font-size:1.02rem; max-width:46ch;}
+  .stat-row{display:flex; gap:40px; margin-top:30px;}
+  .stat-row div strong{display:block; font-family:'Fraunces', serif; font-size:1.7rem;}
+  .stat-row div span{font-size:0.85rem; color:rgba(250,248,244,0.6);}
+
+  .contact{max-width:1120px; margin:0 auto;}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px;}
+  .contact p{color:var(--graphite); max-width:40ch; margin-bottom:24px;}
+  .contact-detail{margin-bottom:14px; font-size:0.98rem;}
+  .contact-detail strong{display:block; font-size:0.8rem; color:var(--graphite); font-weight:500; margin-bottom:2px;}
+  form{display:flex; flex-direction:column; gap:14px;}
+  input, textarea{
+    border:1px solid var(--line); background:var(--paper);
+    padding:12px 14px; font-family:inherit; font-size:0.95rem; color:var(--charcoal);
+  }
+  textarea{resize:vertical; min-height:100px;}
+  button{
+    align-self:flex-start; padding:13px 26px; background:var(--charcoal); color:var(--paper);
+    border:none; font-family:inherit; font-size:0.92rem; cursor:pointer;
+  }
+  button:hover{background:var(--clay);}
+
+  footer{border-top:1px solid var(--line); padding:26px 28px; font-size:0.85rem; color:var(--graphite);
+    padding-bottom: calc(26px + env(safe-area-inset-bottom,0px));}
+  footer .wrap{display:flex; justify-content:space-between;}
+
+  @media (max-width:760px){
+    .hero{grid-template-columns:1fr; gap:30px; padding-top:60px;}
+    .service-row{grid-template-columns:40px 1fr; }
+    .service-row p{grid-column:2;}
+    .grid{grid-template-columns:repeat(2,1fr);}
+    .about .wrap, .contact-grid{grid-template-columns:1fr;}
+    .navlinks{gap:16px; font-size:0.85rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">Studio Verandah</div>
+    <div class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Offices designed around how people actually work.</h1>
+    <p>We plan, design, and fit out corporate interiors — from single floors to full headquarters — for teams who want space that works as hard as they do.</p>
+    <a class="cta" href="#contact">Start a project</a>
+  </div>
+  <div class="meta">
+    <div>Space planning</div>
+    <div>Design &amp; fit-out</div>
+    <div>Furniture &amp; lighting</div>
+    <div>Move management</div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="service-list">
+    <h2>What we do</h2>
+    <div class="service-row">
+      <div class="num">01</div>
+      <h3>Space planning</h3>
+      <p>Headcount and growth modelling, adjacency mapping, and floor plans that balance focus work, collaboration, and circulation.</p>
+    </div>
+    <div class="service-row">
+      <div class="num">02</div>
+      <h3>Interior design</h3>
+      <p>Material palettes, lighting design, and furniture specification that reflect how your team and clients experience the brand in person.</p>
+    </div>
+    <div class="service-row">
+      <div class="num">03</div>
+      <h3>Fit-out &amp; build</h3>
+      <p>Contractor coordination, procurement, and on-site delivery from demolition through to snagging and handover.</p>
+    </div>
+    <div class="service-row">
+      <div class="num">04</div>
+      <h3>Move management</h3>
+      <p>Phased relocation planning so teams keep working while the space changes around them.</p>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <h2>Recent projects</h2>
+  <div class="grid">
+    <div class="tile"><span>Fintech HQ, 3 floors</span></div>
+    <div class="tile"><span>Law firm reception</span></div>
+    <div class="tile"><span>Studio &amp; breakout zone</span></div>
+    <div class="tile"><span>Open-plan floor, 220 desks</span></div>
+    <div class="tile"><span>Executive suite</span></div>
+    <div class="tile"><span>Client meeting suite</span></div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <h2>Studio Verandah</h2>
+      <p>We're a small team of interior designers and project managers who focus exclusively on workplace interiors. That focus means fewer surprises on commercial fit-outs: fire code, cabling, HVAC, and procurement lead times are second nature.</p>
+    </div>
+    <div>
+      <div class="stat-row">
+        <div><strong>60+</strong><span>Offices delivered</span></div>
+        <div><strong>12</strong><span>Years in practice</span></div>
+        <div><strong>4–16</strong><span>Week typical fit-out</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div>
+      <h2>Get in touch</h2>
+      <p>Tell us about your space, your team size, and your timeline. We'll come back with next steps within two working days.</p>
+      <div class="contact-detail"><strong>Email</strong>hello@studioverandah.example</div>
+      <div class="contact-detail"><strong>Phone</strong>+91 00000 00000</div>
+      <div class="contact-detail"><strong>Studio</strong>Bengaluru, Karnataka</div>
+    </div>
+    <form onsubmit="event.preventDefault(); alert('This form is a placeholder — connect it to an email service or backend before going live.');">
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="Company">
+      <textarea placeholder="Tell us about the project"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Studio Verandah</span>
+    <span>Bengaluru, India</span>
+  </div>
+</footer>
+
+</body>
+</html>
