@@ -1,0 +1,26 @@
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div>
+      <h2>Get in touch</h2>
+      <p>Tell us about your space, your team size, and your timeline. We'll come back with next steps within two working days.</p>
+      <div class="contact-detail"><strong>Email</strong>hello@studioverandah.example</div>
+      <div class="contact-detail"><strong>Phone</strong>+91 00000 00000</div>
+      <div class="contact-detail"><strong>Studio</strong>Bengaluru, Karnataka</div>
+    </div>
+    <form id="contact-form">
+      <div id="contact-details">
+        <input type="text" name="name" autocomplete="name" placeholder="Name" required>
+        <input type="text" name="contact" autocomplete="on" placeholder="Email or phone (+country code)" required>
+        <input type="text" name="company" autocomplete="organization" placeholder="Company">
+        <textarea name="project" placeholder="Tell us about the project" required></textarea>
+        <button type="submit">Send verification code</button>
+      </div>
+      <div id="contact-verification" hidden>
+        <label for="contact-code">Verification code</label>
+        <input id="contact-code" name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" placeholder="6-digit code">
+        <button type="button" id="verify-contact">Verify and send request</button>
+      </div>
+      <p id="contact-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>

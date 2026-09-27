@@ -1,0 +1,67 @@
+<section class="hero">
+  <div>
+    <h1>Offices designed around how people actually work.</h1>
+    <p>We plan, design, and fit out corporate interiors — from single floors to full headquarters — for teams who want space that works as hard as they do.</p>
+    <a class="cta" href="#contact">Start a project</a>
+  </div>
+  <div class="meta">
+    <div>Space planning</div>
+    <div>Design &amp; fit-out</div>
+    <div>Furniture &amp; lighting</div>
+    <div>Move management</div>
+  </div>
+</section>
+
+<section class="requirements" id="requirements">
+  <div class="requirements-inner">
+    <div class="requirements-heading">
+      <h2>Requirements</h2>
+      <button class="add-requirement" id="show-requirement-form" type="button" aria-expanded="false" aria-controls="requirement-form">+ Add Requirement</button>
+    </div>
+    <form class="requirement-form" id="requirement-form" hidden>
+      <label for="requirement-placement">Placement
+        <select id="requirement-placement" name="placement" required>
+          <option value="" disabled selected>Select a placement</option>
+          <option>Hall</option>
+          <option>Kitchen</option>
+          <option>Corridor</option>
+          <option>Bedroom</option>
+          <option>Living room</option>
+          <option>Dining room</option>
+          <option>Bathroom</option>
+          <option>Office</option>
+          <option>Balcony</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label for="requirement-material">Material
+        <select id="requirement-material" name="material" required>
+          <option value="" disabled selected>Select a material</option>
+          <option>Wood</option>
+          <option>Steel</option>
+          <option>Aluminum</option>
+          <option>Glass</option>
+          <option>Concrete</option>
+          <option>Marble</option>
+          <option>Laminate</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label for="requirement-size">Size
+        <select id="requirement-size" name="size" required>
+          <option value="" disabled selected>Select a size</option>
+          <option>10 ft</option>
+          <option>20 ft</option>
+          <option>30 ft</option>
+          <option>40 ft</option>
+          <option>50 ft</option>
+          <option>60 ft</option>
+        </select>
+      </label>
+      <button type="submit">Add to list</button>
+    </form>
+    <div class="requirement-list" id="requirement-list" aria-live="polite">
+      <p class="requirement-empty">No requirements added yet. Select “+ Add Requirement” to get started.</p>
+    </div>
+  </div>
+</section>

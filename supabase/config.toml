@@ -1,0 +1,7 @@
+project_id = "office-interior-site"
+
+[functions.contact-otp]
+verify_jwt = false
+
+[functions.contact-submit]
+verify_jwt = false
