@@ -1,0 +1,20 @@
+{
+  "name": "studio-verandah-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "backend:check": "tsc --noEmit -p supabase/functions/tsconfig.json",
+    "backend:start": "supabase start",
+    "backend:stop": "supabase stop",
+    "backend:reset": "supabase db reset",
+    "backend:functions": "supabase functions serve --env-file supabase/.env.local",
+    "backend:deploy": "supabase db push && supabase functions deploy contact-otp && supabase functions deploy contact-submit"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.117.2",
+    "@types/deno": "^2.7.0",
+    "supabase": "^2.118.0",
+    "typescript": "^7.0.2"
+  }
+}
